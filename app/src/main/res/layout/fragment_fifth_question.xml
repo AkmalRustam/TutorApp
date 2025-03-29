@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/question_view_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tv_number_of_questions_background"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="5/15"
+            android:textColor="@color/black_custom"
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="Savol №5"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="Vaqtincha yashash joyi."
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <RadioGroup
+            android:id="@+id/rg_temporary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_first_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="Ko’p qavatli bino"
+                android:textColor="@color/black_custom"
+                android:textSize="16sp"
+                app:buttonTint="@color/black_custom"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_first_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="Yer uchastkasi"
+                android:textColor="@color/black_custom"
+                android:textSize="16sp"
+                app:buttonTint="@color/black_custom"
+                tools:ignore="HardcodedText" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/question_view_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tv_number_of_questions_background"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="6/15"
+            android:textColor="@color/black_custom"
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="Savol №6"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="Ijara shartnomasi bormi?"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <RadioGroup
+            android:id="@+id/rg_rental_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_second_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="Ha"
+                android:textColor="@color/black_custom"
+                android:textSize="16sp"
+                app:buttonTint="@color/black_custom"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_second_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="Yo’q"
+                android:textColor="@color/black_custom"
+                android:textSize="16sp"
+                app:buttonTint="@color/black_custom"
+                tools:ignore="HardcodedText" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

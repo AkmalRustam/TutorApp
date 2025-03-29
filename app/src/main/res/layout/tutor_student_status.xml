@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_back_background"
+        android:contentDescription="@null"
+        android:padding="6dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_report"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/btn_back_background"
+        android:contentDescription="@null"
+        android:padding="6dp"
+        android:src="@drawable/ic_camera_report"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tutor_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="24dp"
+        android:ellipsize="marquee"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textColor="@color/black_custom"
+        android:textSize="20sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toStartOf="@id/iv_report"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintTop_toTopOf="@id/iv_back"
+        tools:text="Axmet Dauletmuratov" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/student_status_container_background">
+
+                <TextView
+                    android:id="@+id/tv_boiler_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textColor="@color/black_custom"
+                    android:textSize="20sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="28.02.2025" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_boiler"
+                    android:layout_width="0dp"
+                    android:layout_height="314dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="14dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_boiler_created_date">
+
+                    <ImageView
+                        android:id="@+id/iv_boiler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY" />
+
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/green_boiler_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/yellow_boiler_container"
+                    app:layout_constraintStart_toStartOf="@id/cv_boiler"
+                    app:layout_constraintTop_toBottomOf="@id/cv_boiler">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/yellow_boiler_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/red_boiler_container"
+                    app:layout_constraintStart_toEndOf="@id/green_boiler_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_boiler">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/yellow_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/red_boiler_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/cv_boiler"
+                    app:layout_constraintStart_toEndOf="@id/yellow_boiler_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_boiler">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/student_status_container_background">
+
+                <TextView
+                    android:id="@+id/tv_gas_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textColor="@color/black_custom"
+                    android:textSize="20sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="28.02.2025" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_gas"
+                    android:layout_width="0dp"
+                    android:layout_height="314dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="14dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_gas_created_date">
+
+                    <ImageView
+                        android:id="@+id/iv_gas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY" />
+
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/green_gas_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/yellow_gas_container"
+                    app:layout_constraintStart_toStartOf="@id/cv_gas"
+                    app:layout_constraintTop_toBottomOf="@id/cv_gas">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/yellow_gas_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/red_gas_container"
+                    app:layout_constraintStart_toEndOf="@id/green_gas_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_gas">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/yellow_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/red_gas_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/cv_gas"
+                    app:layout_constraintStart_toEndOf="@id/yellow_gas_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_gas">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/student_status_container_background">
+
+                <TextView
+                    android:id="@+id/tv_chimney_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textColor="@color/black_custom"
+                    android:textSize="20sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="28.02.2025" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_chimney"
+                    android:layout_width="0dp"
+                    android:layout_height="314dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="14dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_chimney_created_date">
+
+                    <ImageView
+                        android:id="@+id/iv_chimney"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY" />
+
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/green_chimney_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/yellow_chimney_container"
+                    app:layout_constraintStart_toStartOf="@id/cv_chimney"
+                    app:layout_constraintTop_toBottomOf="@id/cv_chimney">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/yellow_chimney_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/red_chimney_container"
+                    app:layout_constraintStart_toEndOf="@id/green_chimney_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_chimney">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/yellow_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/red_chimney_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/cv_chimney"
+                    app:layout_constraintStart_toEndOf="@id/yellow_chimney_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_chimney">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/addition_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/student_status_container_background"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_addition_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textColor="@color/black_custom"
+                    android:textSize="20sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="28.02.2025" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_addition"
+                    android:layout_width="0dp"
+                    android:layout_height="314dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="14dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_addition_created_date">
+
+                    <ImageView
+                        android:id="@+id/iv_addition"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY" />
+
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/green_addition_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/yellow_addition_container"
+                    app:layout_constraintStart_toStartOf="@id/cv_addition"
+                    app:layout_constraintTop_toBottomOf="@id/cv_addition">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/yellow_addition_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/red_addition_container"
+                    app:layout_constraintStart_toEndOf="@id/green_addition_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_addition">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/yellow_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/red_addition_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/unselected_status_background"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/cv_addition"
+                    app:layout_constraintStart_toEndOf="@id/yellow_addition_container"
+                    app:layout_constraintTop_toBottomOf="@id/cv_addition">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_status_background"
+                        android:contentDescription="@null" />
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="24dp"
+        android:alpha=".7"
+        android:background="@drawable/btn_tutor_background"
+        android:clickable="false"
+        android:focusable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_tutor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/auth_next"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

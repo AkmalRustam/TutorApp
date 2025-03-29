@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/student_status_container_background"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/report_dialog_title"
+        android:textColor="@color/black_custom"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_boiler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:paddingStart="4dp"
+        android:text="@string/kotyol"
+        android:textColor="@color/black_custom"
+        android:textSize="16sp"
+        app:buttonIconTint="@color/white"
+        app:buttonTint="@color/black_custom"
+        tools:ignore="RtlSymmetry" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_gas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:paddingStart="4dp"
+        android:text="@string/gaz"
+        android:textColor="@color/black_custom"
+        android:textSize="16sp"
+        app:buttonIconTint="@color/white"
+        app:buttonTint="@color/black_custom"
+        tools:ignore="RtlSymmetry" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_chimney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:paddingStart="4dp"
+        android:text="@string/kavasi"
+        android:textColor="@color/black_custom"
+        android:textSize="16sp"
+        app:buttonIconTint="@color/white"
+        app:buttonTint="@color/black_custom"
+        tools:ignore="RtlSymmetry" />
+
+    <FrameLayout
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_tutor_background">
+
+        <TextView
+            android:id="@+id/tv_tutor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/auth_next"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_userTypeFragment"
+            app:destination="@id/userTypeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_studentFragment"
+            app:destination="@id/studentFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_tutorFragment"
+            app:destination="@id/tutorFragment"
+            app:popUpTo="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTypeFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.usertype.UserTypeFragment"
+        android:label="UserTypeFragment"
+        tools:layout="@layout/fragment_user_type">
+        <action
+            android:id="@+id/action_userTypeFragment_to_authFragment"
+            app:destination="@id/authFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_auth">
+        <argument
+            android:name="userType"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_authFragment_to_tutorFragment"
+            app:destination="@id/tutorFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_authFragment_to_studentFragment"
+            app:destination="@id/studentFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.student.StudentFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_student">
+        <action
+            android:id="@+id/action_studentFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_studentFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_studentFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.tutor.TutorFragment"
+        android:label="TutorFragment"
+        tools:layout="@layout/fragment_tutor">
+        <action
+            android:id="@+id/action_tutorFragment_to_studentsAndGroups"
+            app:destination="@id/studentsAndGroups" />
+        <action
+            android:id="@+id/action_tutorFragment_to_studentTypeFragment"
+            app:destination="@id/studentTypeFragment" />
+        <action
+            android:id="@+id/action_tutorFragment_to_tutorProfileFragment"
+            app:destination="@id/tutorProfileFragment" />
+        <action
+            android:id="@+id/action_tutorFragment_to_tutorNotificationFragment"
+            app:destination="@id/tutorNotificationFragment" />
+        <action
+            android:id="@+id/action_tutorFragment_to_studentStatusFragment"
+            app:destination="@id/studentStatusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.notification.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.question.QuestionFragment"
+        android:label="QuestionFragment"
+        tools:layout="@layout/fragment_question">
+        <argument
+            android:name="questionNumber"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_questionFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_questionFragment_to_finishFragment"
+            app:destination="@id/finishFragment"
+            app:popUpTo="@id/questionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.camera.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/fragment_camera">
+        <action
+            android:id="@+id/action_cameraFragment_to_capturedImageFragment"
+            app:destination="@id/capturedImageFragment"
+            app:popUpTo="@id/cameraFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="fromHeatingEquipment"
+            app:argType="boolean" />
+        <argument
+            android:name="fromTutorProfile"
+            app:argType="boolean" />
+        <argument
+            android:name="fromStudentProfile"
+            app:argType="boolean" />
+        <argument
+            android:name="fromChimney"
+            app:argType="boolean" />
+        <argument
+            android:name="fromAdditional"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/capturedImageFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.capturedimage.CapturedImageFragment"
+        android:label="CapturedImageFragment"
+        tools:layout="@layout/fragment_captured_image">
+        <argument
+            android:name="imageUri"
+            app:argType="string" />
+        <argument
+            android:name="fromHeatingEquipment"
+            app:argType="boolean" />
+        <argument
+            android:name="fromTutorProfile"
+            app:argType="boolean" />
+        <argument
+            android:name="fromStudentProfile"
+            app:argType="boolean" />
+        <argument
+            android:name="fromChimney"
+            app:argType="boolean" />
+        <argument
+            android:name="fromAdditional"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.finish.FinishFragment"
+        android:label="FinishFragment"
+        tools:layout="@layout/fragment_finish" />
+    <fragment
+        android:id="@+id/studentsAndGroups"
+        android:name="com.akmaldev.tutorapp.presentation.ui.studentsandgroups.StudentsAndGroupsFragment"
+        android:label="StudentsAndGroups"
+        tools:layout="@layout/fragment_students_and_groups">
+        <action
+            android:id="@+id/action_studentsAndGroups_to_studentsFragment"
+            app:destination="@id/studentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.students.StudentsFragment"
+        android:label="StudentsFragment"
+        tools:layout="@layout/fragment_students">
+        <argument
+            android:name="groupName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_studentsFragment_to_tutorStudentStatusFragment"
+            app:destination="@id/tutorStudentStatusFragment" />
+        <action
+            android:id="@+id/action_studentsFragment_to_tutorStudentProfileFragment"
+            app:destination="@id/tutorStudentProfileFragment" />
+        <argument
+            android:name="faculty"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorStudentStatusFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.tutorstudentstatus.TutorStudentStatusFragment"
+        android:label="TutorStudentStatusFragment"
+        tools:layout="@layout/tutor_student_status" >
+        <argument android:name="studentId"
+            app:argType="string" />
+        <argument
+            android:name="studentFullName"
+            app:argType="string" />
+        <argument
+            android:name="studentStatus"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tutorStudentStatusFragment_to_reportDialogFragment"
+            app:destination="@id/reportDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentTypeFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.studenttype.StudentTypeFragment"
+        android:label="StudentTypeFragment"
+        tools:layout="@layout/fragment_student_type">
+        <action
+            android:id="@+id/action_studentTypeFragment_to_studentStatusFragment"
+            app:destination="@id/studentStatusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentStatusFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.studentstatus.StudentStatusFragment"
+        android:label="StudentStatusFragment"
+        tools:layout="@layout/fragment_student_status">
+        <argument
+            android:name="status"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_studentStatusFragment_to_tutorStudentStatusFragment"
+            app:destination="@id/tutorStudentStatusFragment" />
+        <action
+            android:id="@+id/action_studentStatusFragment_to_tutorStudentProfileFragment"
+            app:destination="@id/tutorStudentProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorProfileFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.tutorprofile.TutorProfileFragment"
+        android:label="TutorProfileFragment"
+        tools:layout="@layout/fragment_tutor_profile">
+        <action
+            android:id="@+id/action_tutorProfileFragment_to_tutorChangePassword"
+            app:destination="@id/tutorChangePassword" />
+        <action
+            android:id="@+id/action_tutorProfileFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorChangePassword"
+        android:name="com.akmaldev.tutorapp.presentation.ui.tutorchangepassword.TutorChangePassword"
+        android:label="TutorChangePassword"
+        tools:layout="@layout/fragment_tutor_change_password">
+        <action
+            android:id="@+id/action_tutorChangePassword_to_successfullyPasswordChangedFragment"
+            app:destination="@id/successfullyPasswordChangedFragment"
+            app:popUpTo="@id/tutorChangePassword"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/successfullyPasswordChangedFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.successfullypasswordchanged.SuccessfullyPasswordChangedFragment"
+        android:label="SuccessfullyPasswordChangedFragment"
+        tools:layout="@layout/fragment_successfully_password_changed" />
+    <fragment
+        android:id="@+id/tutorStudentProfileFragment"
+        android:name="com.akmaldev.tutorapp.presentation.ui.tutorstudentprofile.TutorStudentProfileFragment"
+        android:label="TutorStudentProfileFragment"
+        tools:layout="@layout/fragment_tutor_student_profile">
+        <argument
+            android:name="studentImage"
+            app:argType="string" />
+        <argument
+            android:name="studentName"
+            app:argType="string" />
+        <argument
+            android:name="studentSurname"
+            app:argType="string" />
+        <argument
+            android:name="studentGroup"
+            app:argType="string" />
+        <argument
+            android:name="studentFaculty"
+            app:argType="string" />
+        <argument
+            android:name="studentRegion"
+            app:argType="string" />
+        <argument
+            android:name="studentGender"
+            app:argType="string" />
+        <argument
+            android:name="studentLat"
+            app:argType="string" />
+        <argument
+            android:name="studentLon"
+            app:argType="string" />
+        <argument
+            android:name="studentStatus"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorNotificationFragment"
+        tools:layout="@layout/fragment_tutor_notification"
+        android:name="com.akmaldev.tutorapp.presentation.ui.tutornotification.TutorNotificationFragment"
+        android:label="TutorNotificationFragment" />
+    <dialog
+        android:id="@+id/reportDialogFragment"
+        tools:layout="@layout/dialog_fragment_report"
+        android:name="com.akmaldev.tutorapp.presentation.ui.report.ReportDialogFragment"
+        android:label="ReportDialogFragment" >
+        <argument
+            android:name="apartmentId"
+            app:argType="string" />
+        <argument
+            android:name="studentId"
+            app:argType="string" />
+    </dialog>
+</navigation>

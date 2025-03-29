@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/question_view_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/tv_number_of_questions_background"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:text="4/15"
+        android:textColor="@color/black_custom"
+        android:textSize="18sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="Savol №4"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="Quyidagilardan birini belgilang."
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/rg_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="20 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="21 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="22 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="23 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_fifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="24 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_sixth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="25 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_seventh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="26 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_eighth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="27 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_ninth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="28 - kichik tuman"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_tenth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="Boshqa"
+                    android:textColor="@color/black_custom"
+                    android:textSize="16sp"
+                    app:buttonTint="@color/black_custom"
+                    tools:ignore="HardcodedText" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/first_question_phone_number_background"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:hint="Yozing..."
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/black_custom"
+                android:textColorHint="@color/gray"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:ignore="HardcodedText,LabelFor" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
