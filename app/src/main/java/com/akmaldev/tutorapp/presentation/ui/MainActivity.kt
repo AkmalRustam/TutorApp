@@ -1,6 +1,7 @@
 package com.akmaldev.tutorapp.presentation.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            Log.d(TAG, "destination: ${destination.label}")
             when (destination.id) {
                 R.id.splashFragment -> {
                     setStatusBarColor(R.color.white)

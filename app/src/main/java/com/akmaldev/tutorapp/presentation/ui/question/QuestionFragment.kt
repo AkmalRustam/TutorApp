@@ -66,7 +66,7 @@ class QuestionFragment : BaseFragment<FragmentQuestionBinding>(FragmentQuestionB
                 }
 
                 is WrappedResponse.Success -> {
-                    navigateTo(R.id.action_questionFragment_to_finishFragment)
+                    navigateTo(R.id.finishFragment)
                 }
             }
         }.launchIn(lifecycleScope)
@@ -88,6 +88,11 @@ class QuestionFragment : BaseFragment<FragmentQuestionBinding>(FragmentQuestionB
         btnPrevious.setOnClickListener {
             viewPager.apply {
                 setCurrentItem(currentItem.plus(1), false)
+            }
+        }
+        btnPreviousSecond.setOnClickListener {
+            viewPager.apply {
+                setCurrentItem(currentItem.minus(1), false)
             }
         }
         btnNext.setOnClickListener {
@@ -208,19 +213,19 @@ class QuestionFragment : BaseFragment<FragmentQuestionBinding>(FragmentQuestionB
             0 -> {
                 btnMainNext.visibility = View.VISIBLE
                 btnNextAndPreviousGroup.visibility = View.INVISIBLE
-                btnFinish.visibility = View.INVISIBLE
+                finishLayout.visibility = View.INVISIBLE
             }
 
             10 -> {
                 btnMainNext.visibility = View.INVISIBLE
                 btnNextAndPreviousGroup.visibility = View.INVISIBLE
-                btnFinish.visibility = View.VISIBLE
+                finishLayout.visibility = View.VISIBLE
             }
 
             else -> {
                 btnMainNext.visibility = View.INVISIBLE
                 btnNextAndPreviousGroup.visibility = View.VISIBLE
-                btnFinish.visibility = View.INVISIBLE
+                finishLayout.visibility = View.INVISIBLE
             }
         }
     }

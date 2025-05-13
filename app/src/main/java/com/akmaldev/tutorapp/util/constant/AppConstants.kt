@@ -1,6 +1,7 @@
 package com.akmaldev.tutorapp.util.constant
 
 object AppConstants {
+    const val BASE_URL = "http://45.134.39.117:5050"
     const val SHARED_PREFERENCES = "shared_preferences"
     const val EMPTY_STRING = ""
     const val AUTH_OK_HTTP_CLIENT = "auth_ok_http_client"

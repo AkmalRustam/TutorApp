@@ -20,39 +20,41 @@ class StudentFragment : BaseFragment<FragmentStudentBinding>(FragmentStudentBind
     @Inject
     lateinit var sharedPreferencesHelper: SharedPreferencesHelper
 
-    @SuppressLint("SetTextI18n")
-    override fun FragmentStudentBinding.setViews() {
-        val studentFirstName = "${
-            sharedPreferencesHelper.studentFirstName.take(1).uppercase()
-        }${sharedPreferencesHelper.studentFirstName.drop(1).lowercase()}"
-        tvUserName.apply {
-            text = "Salom, $studentFirstName"
-            isSelected = true
-        }
-        tvSubtitle.isSelected = true
-        tvNumberOfQuestions.text = "${sharedPreferencesHelper.questionNumber}/17"
-        when (sharedPreferencesHelper.questionNumber) {
-            1 -> {
-                btnStudentState.setBackgroundResource(R.drawable.btn_tutor_background)
-                tvStudentState.text = getString(R.string.student_start)
+    override fun onResume() {
+        super.onResume()
+        with(binding) {
+            val studentFirstName = "${
+                sharedPreferencesHelper.studentFirstName.take(1).uppercase()
+            }${sharedPreferencesHelper.studentFirstName.drop(1).lowercase()}"
+            tvUserName.apply {
+                text = "Salom, $studentFirstName"
+                isSelected = true
             }
+            tvSubtitle.isSelected = true
+            tvNumberOfQuestions.text = "${sharedPreferencesHelper.questionNumber}/17"
+            when (sharedPreferencesHelper.questionNumber) {
+                1 -> {
+                    btnStudentState.setBackgroundResource(R.drawable.btn_tutor_background)
+                    tvStudentState.text = getString(R.string.student_start)
+                }
 
-            17 -> {
-                btnStudentState.setBackgroundResource(R.drawable.btn_student_state_finish)
-                tvStudentState.text = getString(R.string.student_finish)
-            }
+                17 -> {
+                    btnStudentState.setBackgroundResource(R.drawable.btn_student_state_finish)
+                    tvStudentState.text = getString(R.string.student_finish)
+                }
 
-            else -> {
-                btnStudentState.setBackgroundResource(R.drawable.btn_tutor_background)
-                tvStudentState.text = getString(R.string.student_next)
+                else -> {
+                    btnStudentState.setBackgroundResource(R.drawable.btn_tutor_background)
+                    tvStudentState.text = getString(R.string.student_next)
+                }
             }
+            Glide
+                .with(requireContext())
+                .load(sharedPreferencesHelper.studentImage)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
+                .into(civUserImage)
         }
-        Glide
-            .with(requireContext())
-            .load(sharedPreferencesHelper.studentImage)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .centerCrop()
-            .into(civUserImage)
     }
 
     override fun FragmentStudentBinding.setListeners() {

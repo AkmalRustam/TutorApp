@@ -25,7 +25,7 @@ data class Student(
     val birth_date: String,
     val student_id_number: String,
     val image: String,
-    val avg_gpa: Long,
+    val avg_gpa: Double,
     val avg_grade: Double,
     val total_credit: Int,
     val currentProvince: StudentProvince,
